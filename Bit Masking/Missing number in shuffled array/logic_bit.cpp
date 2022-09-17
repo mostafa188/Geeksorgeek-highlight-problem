@@ -1,0 +1,46 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+
+#define maxi a = a>b ? a:b
+class Solution{
+    public:
+    long long findMissing(long long int a[], long long int b[], int n){
+        long long c = 0;
+        sort(a,a+n);
+        sort(b,b+(n-1));
+        
+        for(int i=0;i<n;i++){
+            if(a[i]^b[i])
+            return a[i];
+        }
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        long long a[n], b[n-1];
+
+        for(int i=0;i<n;i++){
+          cin>>a[i];
+        }
+        for(int i=0;i<n-1;i++){
+          cin>>b[i];
+        }
+        Solution ob;
+        cout<<ob.findMissing(a, b, n)<<endl;
+    }
+}
+
+
+// } Driver Code Ends
